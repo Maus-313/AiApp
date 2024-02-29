@@ -72,7 +72,7 @@ dependencies {
 
     // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
-
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
 
     // coil
     implementation("io.coil-kt:coil-compose:2.6.0")
@@ -80,5 +80,8 @@ dependencies {
     // Some Icons
     // https://mvnrepository.com/artifact/androidx.compose.material/material-icons-extended
     runtimeOnly("androidx.compose.material:material-icons-extended:1.6.2")
+
+    // Coroutine
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
 }
