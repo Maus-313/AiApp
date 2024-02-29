@@ -15,18 +15,12 @@ import com.example.aiapp.ui.theme.AiAppTheme
 import com.google.ai.client.generativeai.BuildConfig
 import com.google.ai.client.generativeai.GenerativeModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.io.Reader
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val generativeModel = GenerativeModel(
-            modelName = "gemini-pro-version",
-            apiKey = "AIzaSyAJxibsfx8KUdkHKL30d2mXNrwXz9OD584"
-        )
-
-//        val uriReader = UriReader()
 
         setContent {
             AiAppTheme {
@@ -35,7 +29,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-//                    val viewModel = viewModel<MainActivity>()
+
                 }
             }
         }

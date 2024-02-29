@@ -1,8 +1,6 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    kotlin("kapt")
-    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -73,14 +71,14 @@ dependencies {
     implementation("com.google.ai.client.generativeai:generativeai:0.2.0")
 
     // ViewModel
-    val lifecycle_version = "2.7.0"
-    val arch_version = "2.2.0"
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
 
-    // LiveData
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
 
-    // Hilt
-    implementation("com.google.dagger:hilt-android:2.48")
-    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    // coil
+    implementation("io.coil-kt:coil-compose:2.6.0")
+
+    // Some Icons
+    // https://mvnrepository.com/artifact/androidx.compose.material/material-icons-extended
+    runtimeOnly("androidx.compose.material:material-icons-extended:1.6.2")
+
 }
