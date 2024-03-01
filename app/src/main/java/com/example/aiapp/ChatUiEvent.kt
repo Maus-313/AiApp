@@ -8,7 +8,7 @@ sealed class ChatUiEvent {
 
     data class SendPrompt(
         val prompt: String,
-        val bitmap: Bitmap
+        val bitmap: Bitmap?
     ): ChatUiEvent()
 
 }

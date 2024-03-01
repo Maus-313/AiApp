@@ -196,7 +196,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier
                         .size(40.dp)
                         .clickable {
-                            chaViewModel.onEvent(ChatUiEvent.SendPrompt(chatState.prompt, bitmap!!))
+                            chaViewModel.onEvent(ChatUiEvent.SendPrompt(chatState.prompt, bitmap))
                             uriState.update { "" }
                         },
                     imageVector = Icons.Rounded.Send,
