@@ -26,6 +26,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Send
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -39,7 +40,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color.Companion.Green
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
@@ -170,7 +170,7 @@ class MainActivity : ComponentActivity() {
                                         .build()
                                 )
                             },
-                        imageVector = Icons.Rounded.AddPhotoAlternate,
+                        imageVector = Icons.Rounded.Add,
                         contentDescription = "Add Photo",
                         tint = MaterialTheme.colorScheme.primary
                     )
@@ -196,7 +196,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier
                         .size(40.dp)
                         .clickable {
-                            chaViewModel.onEvent(ChatUiEvent.SendPrompt(chatState.prompt, bitmap))
+                            chaViewModel.onEvent(ChatUiEvent.SendPrompt(chatState.prompt, bitmap!!))
                             uriState.update { "" }
                         },
                     imageVector = Icons.Rounded.Send,
@@ -269,7 +269,7 @@ class MainActivity : ComponentActivity() {
         val imageState: AsyncImagePainter.State = rememberAsyncImagePainter(
             model = ImageRequest.Builder(LocalContext.current)
                 .data(uri)
-                .size(Size.ORIGINAL)
+                .size(coil.size.Size.ORIGINAL)
                 .build()
         ).state
 
